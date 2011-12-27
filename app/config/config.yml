@@ -47,7 +47,6 @@ doctrine:
                 password: %database_password%
                 charset:  UTF8
                 unix_socket: %mysql_socket%
-
     orm:
         default_entity_manager:   default
         entity_managers:
@@ -55,7 +54,6 @@ doctrine:
                 connection:       default
                 mappings:
                     InmovilizamePhotoblogBundle: ~
-                    FOSUserBundle: ~
 
 doctrine_mongodb:
     document_managers:
