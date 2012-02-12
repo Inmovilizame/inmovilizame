@@ -4,6 +4,7 @@
 /app/logs/*
 /vendor/
 /app/config/parameters.yml
+/app/config/parameters.ini
 /.settings/
 /.project
 .DS_Store
