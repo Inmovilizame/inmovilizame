@@ -1,5 +1,5 @@
-InmovilizamePhotoblogBundle:
-    resource: "@InmovilizamePhotoblogBundle/Controller/"
+PhotoblogBundle:
+    resource: "@PhotoblogBundle/Controller/"
     type:     annotation
     prefix:   /
 

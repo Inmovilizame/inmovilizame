@@ -1,5 +1,5 @@
 imports:
-    - { resource: parameters.ini }
+    - { resource: parameters.yml }
     - { resource: security.yml }
 
 framework:
@@ -20,6 +20,11 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    
+    globals:
+        locale: %locale%
+        charset: %charset%
+        siteName: %siteName%
 
 # Assetic Configuration
 assetic:
@@ -53,13 +58,13 @@ doctrine:
             default:
                 connection:       default
                 mappings:
-                    InmovilizamePhotoblogBundle: ~
+                    PhotoblogBundle: ~
 
 doctrine_mongodb:
     document_managers:
         default:
             mappings:
-                InmovilizamePhotoblogBundle: ~
+                PhotoblogBundle: ~
     connections:
         default:
             server: mongodb://localhost:27017

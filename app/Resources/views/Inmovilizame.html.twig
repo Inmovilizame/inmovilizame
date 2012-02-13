@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="{{ locale }}">
+<head>
+	<meta charset="{{ charset }}" />
+	<title>{% block title %}{{ siteName }}{% endblock %}</title>
+	<meta name="description" content="{% block metaDescription %}{{ siteName }}{% endblock %}" />
+    <meta name="author" content="{% block metaKeywords %}{{ siteName }}{% endblock %}" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+	
+	<!-- To Top scripts -->
+	{% block headscript%}
+    {% javascripts 'lib/bootstrap.js'
+                   output='js/jquery.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {% endblock %}
+	
+	<!-- CSS -->
+	{% block headstyles %}
+    {% stylesheets 'styles/bootstrap.css'
+    			   'styles/bootstrap-responsive.css'
+                   output='css/base.css' %} 
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" /> 
+    {% endstylesheets %}
+    {% endblock %}
+	
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+
+	
+	<!-- Analytics -->
+
+</head>
+<body>
+	{% if app.session.hasFlash('info') %}
+	    {% block flashmsg %}
+	    <div class="alert-message info fade in">
+	        <a class="close" href="#">×</a>
+	        <p>{{ app.session.getFlash('info') }}</p>
+	    </div>
+	    {% endblock %}
+	{% endif %}
+	    
+	{% block page %}{% endblock %}
+	
+	{% block javascripts %}
+	<script type="application/x-javascript">
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){
+			window.scrollTo(0,1);
+		}
+		
+		$(document).ready(function() {
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	{% endblock %}
+</body>
+</html>

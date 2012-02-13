@@ -1,15 +1,16 @@
 ; These parameters can be imported into other config files
 ; by enclosing the key with % (like %database_user%)
 ; Comments start with ';', as in php.ini
-parameters
+# These parameters can be imported into other config files
+# by enclosing the key with % (like %database_user%)
+# Comments start with '#'
+parameters:
     database_driver : pdo_mysql
     database_host : localhost
     database_port :
     database_name : symfony
     database_user : root
     database_password :
-    
-    mysql_socket : /Applications/MAMP/tmp/mysql/mysql.sock
     
     mailer_transport : smtp
     mailer_host : localhost
@@ -19,4 +20,6 @@ parameters
     locale : es
     
     secret : 984d57e1de5e3d1a0ee6c110e3549f5eec4b0d35
+
+    mysql_socket : /Applications/MAMP/tmp/mysql/mysql.sock
 
