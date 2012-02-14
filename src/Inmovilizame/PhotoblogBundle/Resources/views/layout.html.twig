@@ -19,16 +19,18 @@
         </div>
         {% endblock %}
         <div class="row">
-            <div class="span4 sidebar">
+            <div class="span2 sidebar">
                 {% block sidebar %}
                     {% render 'PhotoblogBundle:Default:sidebar.html.twig' %}
                 {% endblock %}
             </div>
-            <div class="span12 content">
+            <div class="span10 content">
                 {% block content %}{% endblock %}
             </div>
         </div>
     </div>
+    
+    <hr />
         
     {% include 'PhotoblogBundle:Default:footer.html.twig' %} 
 

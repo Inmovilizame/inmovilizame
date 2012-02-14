@@ -16,18 +16,18 @@
 	<!-- To Top scripts -->
 	{% block headscript%}
     {% javascripts 'lib/jquery-1.7.1.js'
-    			   'lib/bootstrap-transition.js'
-    			   'lib/bootstrap-alert.js'
-    			   'lib/bootstrap-modal.js'
-    			   'lib/bootstrap-dropdown.js'
-    			   'lib/bootstrap-scrollspy.js'
-    			   'lib/bootstrap-tab.js'
-    			   'lib/bootstrap-tooltip.js'
-    			   'lib/bootstrap-popover.js'
-    			   'lib/bootstrap-button.js'
-    			   'lib/bootstrap-collapse.js'
-    			   'lib/bootstrap-carousel.js'
-    			   'lib/bootstrap-typehead.js'
+    			   'lib/bootstrap/bootstrap-transition.js'
+    			   'lib/bootstrap/bootstrap-alert.js'
+    			   'lib/bootstrap/bootstrap-modal.js'
+    			   'lib/bootstrap/bootstrap-dropdown.js'
+    			   'lib/bootstrap/bootstrap-scrollspy.js'
+    			   'lib/bootstrap/bootstrap-tab.js'
+    			   'lib/bootstrap/bootstrap-tooltip.js'
+    			   'lib/bootstrap/bootstrap-popover.js'
+    			   'lib/bootstrap/bootstrap-button.js'
+    			   'lib/bootstrap/bootstrap-collapse.js'
+    			   'lib/bootstrap/bootstrap-carousel.js'
+    			   'lib/bootstrap/bootstrap-typehead.js'
                    output='js/inmovilizame.js' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -35,17 +35,12 @@
 	
 	<!-- CSS -->
 	{% block headstyles %}
-    {% stylesheets 'styles/bootstrap.css'
-    			   'styles/bootstrap-responsive.css'
-                   output='css/base.css' %} 
+    {% stylesheets 'styles/bootstrap/bootstrap.css'
+    			   'styles/bootstrap/bootstrap-responsive.css'
+    			   'styles/inmovil.css'
+                   output='css/inmovilizame.css' %} 
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" /> 
     {% endstylesheets %}
-    
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
     {% endblock %}
 	
 	<!-- Favicons -->
