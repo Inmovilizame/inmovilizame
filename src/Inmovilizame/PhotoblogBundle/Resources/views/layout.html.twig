@@ -1,8 +1,8 @@
 {% extends '::Inmovilizame.html.twig' %}
 
 {% block page %}
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+<div class="topbar">
+    <div class="fill">
         <div class="container">
             {% block topbar %}
                 {% include 'PhotoblogBundle:Default:topbar.html.twig' %}
@@ -19,13 +19,18 @@
         </div>
         {% endblock %}
         <div class="row">
-            <div class="span16">
+            <div class="span4 sidebar">
+                {% block sidebar %}
+                    {% render 'PhotoblogBundle:Default:sidebar.html.twig' %}
+                {% endblock %}
+            </div>
+            <div class="span12 content">
                 {% block content %}{% endblock %}
             </div>
         </div>
     </div>
-
-    {% include 'PhotoblogBundle:Default:footer.html.twig' %}
+        
+    {% include 'PhotoblogBundle:Default:footer.html.twig' %} 
 
 </div>
 {% endblock %}

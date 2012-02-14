@@ -1,5 +1,83 @@
 {% extends 'PhotoblogBundle::front.html.twig' %}
 
-{% block page %}
+{% block headscript %}
+{{ parent() }}
+<script type='text/javascript' src='{{ asset('lib/shuffleLetter/jquery.shuffleLetters.js') }}'></script>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+   <script type='text/javascript'>
+        $("#shuffle").shuffleLetters();
+   </script>
+{% endblock %}
+   
+{% block headstyles %}
+{{ parent() }}
+
+<style type="text/css">
+#shuffle {
+    position: relative;
+    padding-left: 40px;
+    border-bottom: 1px solid #999999;
+}
+   
+#shuffle:before{
+    content: ">";
+    font-size: 50px;
+    left: 0;
+    top: 7px;
+    opacity: 0.25;
+    position: absolute;
+    text-shadow: 2px 2px 0 #111111;
+}
+</style>
+{% endblock %}
+
+{% block pageheader %}{% endblock %}
+
+{% block content %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+    <div>
+        <h1>
+            <span id="shuffle">Bienvenido a Qlees!</span>
+        </h1>
+    </div>
+</div>
+
+<!-- Example row of columns -->
+<div class="row">
+    <div class="span5">
+        <h2>Etiqueta</h2>
+        <img alt="Califica tu colección" src="{{ asset('images/portada/etiqueta.png') }}" class="thumbnail thumbbdeco">
+        <p>Etiqueta tus libros favoritos para encontrarlos posteriormente de una forma natural, busca por tus propias palabras, crea tu propia clasificación.</p>
+        <p>Bueno, malo, largo, corto, excelente, pés﻿imo … define con palabras cualquier idea que te evoque una obra.</p>
+        <p><a class="btn" href="http://blog.qlees.es/como/etiqueta/">Lee más...</a></p>
+    </div>
+    <div class="span6">
+        <h2>Selecciona</h2>
+        <img alt="Marca tu colección" src="{{ asset('images/portada/selecciona.png') }}" class="thumbnail thumbbdeco">
+        <p>Selecciona tus obras favoritas e insértalas en tu estantería virtual. No mantengas listas de libros en tu pc, nosotros te ofrecemos una solución para disponer de tu propio catálogo personal en internet.</p>
+        <p>Todas las obras que hayas leído o tengas intención de leer en un futuro, crea tu colección ideal y compártela con tus amigos.</p>
+        <p><a class="btn" href="http://blog.qlees.es/como/selecciona/">Lee más...</a></p>
+    </div>
+    <div class="span5">
+        <h2>Comenta</h2>
+        <img alt="Enriquece tu colección" src="{{ asset('images/portada/comenta.png') }}" class="thumbnail thumbbdeco">
+        <p>Exprésate, inserta tus valoraciones y comentarios, detalla los fragmentos que más te han gustado o critica la obra o su autor.</p>
+        <p>Los comentarios serán añadidos al detalle de la obra para crear una información social que enriquezca la información en bibliotecas o tiendas virtuales.</p>
+        <p><a class="btn" href="http://blog.qlees.es/como/comenta/">Lee más...</a></p>
+    </div>
+    <div class="span1"></div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="span16">
+        <img alt="Gracias por leer, by Xercode" src="{{ asset('images/portada/bottomPubli.png') }}" class="thumbnail">
+    </div>
+</div>
 
 {% endblock %}

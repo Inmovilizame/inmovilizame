@@ -15,8 +15,20 @@
 	
 	<!-- To Top scripts -->
 	{% block headscript%}
-    {% javascripts 'lib/bootstrap.js'
-                   output='js/jquery.js' %}
+    {% javascripts 'lib/jquery-1.7.1.js'
+    			   'lib/bootstrap-transition.js'
+    			   'lib/bootstrap-alert.js'
+    			   'lib/bootstrap-modal.js'
+    			   'lib/bootstrap-dropdown.js'
+    			   'lib/bootstrap-scrollspy.js'
+    			   'lib/bootstrap-tab.js'
+    			   'lib/bootstrap-tooltip.js'
+    			   'lib/bootstrap-popover.js'
+    			   'lib/bootstrap-button.js'
+    			   'lib/bootstrap-collapse.js'
+    			   'lib/bootstrap-carousel.js'
+    			   'lib/bootstrap-typehead.js'
+                   output='js/inmovilizame.js' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
     {% endblock %}
@@ -28,6 +40,12 @@
                    output='css/base.css' %} 
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" /> 
     {% endstylesheets %}
+    
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
     {% endblock %}
 	
 	<!-- Favicons -->
@@ -54,14 +72,7 @@
 	
 	{% block javascripts %}
 	<script type="application/x-javascript">
-		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){
-			window.scrollTo(0,1);
-		}
-		
-		$(document).ready(function() {
-			$().UItoTop({ easingType: 'easeOutQuart' });
-		});
+    	$(".alert-message").alert()
 	</script>
 	{% endblock %}
 </body>
