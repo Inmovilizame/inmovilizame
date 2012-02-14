@@ -1,14 +1,12 @@
 <?php
-
-// src/Inmovilizame/PhotblogBundle/Document/Content.php
-
 namespace Inmovilizame\PhotoblogBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
-/** @MongoDB\MappedSuperclass
+/** 
+ * @MongoDB\MappedSuperclass
  */
-abstract class GenericContent
+abstract class AbstractContent
 {
 	/** @MongoDB\Id */
     protected $id;

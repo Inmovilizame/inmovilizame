@@ -8,25 +8,25 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 class Image
 {
     /** @MongoDB\Id */
-    private $id;
+    protected $id;
 
     /** @MongoDB\Field */
-    private $name;
+    protected $name;
 
     /** @MongoDB\File */
-    private $file;
+    protected $file;
 
     /** @MongoDB\Field */
-    private $uploadDate;
+    protected $uploadDate;
 
     /** @MongoDB\Field */
-    private $length;
+    protected $length;
 
     /** @MongoDB\Field */
-    private $chunkSize;
+    protected $chunkSize;
 
     /** @MongoDB\Field */
-    private $md5;
+    protected $md5;
 
     public function getId()
     {
