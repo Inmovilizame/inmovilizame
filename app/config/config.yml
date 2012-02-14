@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: services.yml }
 
 framework:
     #esi:             ~
@@ -22,8 +23,8 @@ twig:
     strict_variables: %kernel.debug%
     
     globals:
-        locale: %locale%
-        charset: %charset%
+        locale:   %locale%
+        charset:  %charset%
         siteName: %siteName%
 
 # Assetic Configuration
