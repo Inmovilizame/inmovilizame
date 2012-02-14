@@ -1,5 +1,4 @@
- <?php
-
+<?php
 namespace Inmovilizame\PhotoblogBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
@@ -39,5 +38,23 @@ class Blog extends Page
     public function getTags()
     {
         return $this->tags;
+    }
+    
+    public function setTags($tags)
+    {
+        if (is_array($tags))
+        {
+            $this->tags = $tags;
+        }
+        elseif (is_string($tags)) 
+        {
+            $tags = str_replace(' ', '', $tags);
+            $tags = explode(',', $tags);
+            $this->tags = $tags;
+        }
+        else 
+        {
+            $this->tags = array();
+        }
     }
 }

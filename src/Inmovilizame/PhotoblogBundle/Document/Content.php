@@ -1,5 +1,4 @@
 <?php
-
 namespace Inmovilizame\PhotoblogBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
@@ -12,7 +11,7 @@ use Inmovilizame\PhotoblogBundle\Utils\Utility;
  * @MongoDB\DiscriminatorMap({
  *   "content"="Content",
  *   "page"="Page",
- *   "blog"="Blog"
+ *   "blog"="Blog",
  * 	 "photoblog"="Photoblog"
  * })
  */
@@ -35,7 +34,7 @@ class Content extends AbstractContent
 		$this->setTitleSlug($title);
     }
 	
-	public function getTitle()
+	public function getTitleSlug()
     {
         return $this->titleSlug;
     }
