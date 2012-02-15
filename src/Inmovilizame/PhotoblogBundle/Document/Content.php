@@ -11,6 +11,7 @@ use Inmovilizame\PhotoblogBundle\Utils\Utility;
  * @MongoDB\DiscriminatorMap({
  *   "content"="Content",
  *   "page"="Page",
+ *   "faq"="Faq",
  *   "blog"="Blog",
  * 	 "photoblog"="Photoblog"
  * })

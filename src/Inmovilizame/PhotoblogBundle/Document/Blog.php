@@ -12,16 +12,6 @@ class Blog extends Page
     /** @MongoDB\String */
     private $excerpt;
 
-    public function getExcerpt()
-    {
-        return $this->excerpt;
-    }
-
-    public function setExcerpt($excerpt)
-    {
-        $this->excerpt = $excerpt;
-    }
-
     public function addTag($tag)
     {
         $this->tags[] = $tag;
@@ -56,5 +46,15 @@ class Blog extends Page
         {
             $this->tags = array();
         }
+    }
+    
+    public function getExcerpt()
+    {
+        return $this->excerpt;
+    }
+
+    public function setExcerpt($excerpt)
+    {
+        $this->excerpt = $excerpt;
     }
 }
