@@ -21,11 +21,15 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'PhotoblogBundle:Form:fields.html.twig'
     
     globals:
         locale:   %locale%
         charset:  %charset%
-        siteName: %siteName%
+        site_name: %site_name%
+        info_email_cloacked: %info_email_cloacked%
 
 # Assetic Configuration
 assetic:
