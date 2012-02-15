@@ -3,11 +3,12 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
 
+
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      ~
     secret:          %secret%
-    charset:         UTF-8
+    charset:         %charset%
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
     csrf_protection: true
@@ -17,19 +18,20 @@ framework:
         default_locale: %locale%
         auto_start:     true
 
+
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
     form:
         resources:
-            - 'PhotoblogBundle:Form:fields.html.twig'
-    
+            - 'PhotoblogBundle:Form:fields.html.twig'    
     globals:
         locale:   %locale%
         charset:  %charset%
         site_name: %site_name%
         info_email_cloacked: %info_email_cloacked%
+
 
 # Assetic Configuration
 assetic:
@@ -64,20 +66,22 @@ doctrine:
                 connection:       default
                 mappings:
                     PhotoblogBundle: ~
+                    AdminBundle: ~
 
 doctrine_mongodb:
     document_managers:
         default:
             mappings:
                 PhotoblogBundle: ~
+                AdminBundle: ~
     connections:
         default:
-            server: mongodb://localhost:27017
+            server: %mongodb_server%
             options:
                 connect: true
     default_document_manager: default
     default_connection: default
-    default_database: inmovilizame
+    default_database: %mongodb_dbname%
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -89,3 +93,9 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+# FOS User Configuration
+fos_user:
+    db_driver: mongodb
+    firewall_name: main
+    user_class: Inmovilizame\AdminBundle\Document\User

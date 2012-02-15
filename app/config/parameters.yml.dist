@@ -5,19 +5,26 @@
 # by enclosing the key with % (like %database_user%)
 # Comments start with '#'
 parameters:
-    database_driver : pdo_mysql
-    database_host : localhost
-    database_port :
-    database_name : symfony
-    database_user : root
-    database_password :
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:
+    database_name:     dbname
+    database_user:     user
+    database_password: dbpass
     
-    mailer_transport : smtp
-    mailer_host : localhost
-    mailer_user :
-    mailer_password : 
+    mongodb_server: mongodb://localhost:27017
+    mongodb_dbname: xxxxxxxxx
+    
+    mailer_transport: mailer
+    mailer_host:      localhost
+    mailer_user:      xxxxxxxxx
+    mailer_password:  xxxxxxxxx
     
     locale : es
+    charset: utf-8
+    site_name: InmovilizaME
+    info_email: info@inmoviliza.me
+    info_email_cloacked: info [|AT|] inmoviliza [|DOT|] me
     
     secret : 984d57e1de5e3d1a0ee6c110e3549f5eec4b0d35
 

@@ -1,3 +1,8 @@
+AdminBundle:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 PhotoblogBundle:
     resource: "@PhotoblogBundle/Controller/"
     type:     annotation
