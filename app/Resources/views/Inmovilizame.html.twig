@@ -2,9 +2,9 @@
 <html lang="{{ locale }}">
 <head>
 	<meta charset="{{ charset }}" />
-	<title>{% block title %}{{ siteName }}{% endblock %}</title>
-	<meta name="description" content="{% block metaDescription %}{{ siteName }}{% endblock %}" />
-    <meta name="author" content="{% block metaKeywords %}{{ siteName }}{% endblock %}" />
+	<title>{% block title %}{{ site_name }}{% endblock %}</title>
+	<meta name="description" content="{% block metaDescription %}{{ site_name }}{% endblock %}" />
+    <meta name="author" content="{% block metaKeywords %}{{ site_name }}{% endblock %}" />
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -56,9 +56,9 @@
 <body>
 	{% if app.session.hasFlash('info') %}
 	    {% block flashmsg %}
-	    <div class="alert-message info fade in">
-	        <a class="close" href="#">×</a>
-	        <p>{{ app.session.getFlash('info') }}</p>
+	    <div class="container alert alert-info fade in">
+	        <a class="close" data-dismiss="alert" href="#">&times;</a>
+	        {{ app.session.getFlash('info') }}
 	    </div>
 	    {% endblock %}
 	{% endif %}
@@ -67,7 +67,7 @@
 	
 	{% block javascripts %}
 	<script type="application/x-javascript">
-    	$(".alert-message").alert()
+    	$(".alert").alert()
 	</script>
 	{% endblock %}
 </body>

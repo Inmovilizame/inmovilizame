@@ -1,27 +1,28 @@
 {# src/Xercode/BackofficeBundle/Resources/views/Default/index.html.twig #}
-{% extends 'QleesBundle::front.html.twig' %}
+{% extends 'PhotoblogBundle::front.html.twig' %}
+
+{% block pageheader %}
+    <div class = "page-header">
+        <h1>Contacta con nosotros <small>Envianos cualquier sugerencia o duda</small></h1>
+    </div>
+{% endblock %}
 
 {% block content %}
-<!-- Main hero unit for a primary marketing message or call to action -->
-<div class="hero-unit">
-  <h1>Todas tus dudas</h1>
-  <p>Por favor haznos llegar cualquier duda o sugerencia que consideres necesarias.</p>
-</div>
-
-<!-- Example row of columns -->
 <div class="row">
     <div class="span6">
         <h2>Formulario de contacto</h2>
-        <form action="{{ path('ql_contact') }}" method="post" {{ form_enctype(form) }}> 
+        <form action="{{ path('in_contact') }}" method="post" {{ form_enctype(form) }} class="form-horizontal"> 
             {{ form_widget(form) }}
-            <div class="actions">
-                <button id="send" class="btn" type="submit">Enviar comentario</button>
+            <div class="form-actions">
+                <button id="send" class="btn btn-primary" type="submit">Enviar comentario</button>
             </div>
         </form>
     </div>
     
     <div class="span6">
         <h2>Informacion de contacto</h2>
+        <p><i class="icon-inbox"></i></i><strong>Email</strong>: <span>{{ info_email_cloacked }}</span></p>
+        <p><i class="icon-inbox"></i></i><strong>Email</strong>: <span>{{ info_email_cloacked }}</span></p>
     </div>
 </div>
 
